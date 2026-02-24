@@ -3,112 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vimal Kumar R - Resume</title>
+<title>Vimal Kumar R | Cybersecurity Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-        line-height: 1.6;
-        color: #222;
-    }
-    h1, h2 {
-        color: #0a4d8c;
-        margin-bottom: 5px;
-    }
-    h2 {
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 4px;
-        margin-top: 25px;
-    }
-    ul {
-        margin-top: 5px;
-    }
-    .contact {
-        margin-bottom: 20px;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0f17;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Background Glow */
+body::before{
+  content:'';
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#00bfff33,transparent);
+  top:-200px;
+  left:-100px;
+  z-index:-1;
+}
+
+section{
+  padding:80px 10%;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  perspective:1000px;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  color:#00d9ff;
+  transform:rotateX(15deg);
+  animation:float 4s infinite ease-in-out;
+}
+
+.hero h2{
+  margin-top:10px;
+  font-weight:300;
+  color:#ccc;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotateX(15deg);}
+  50%{transform:translateY(-10px) rotateX(20deg);}
+}
+
+.card{
+  background:#111827;
+  padding:30px;
+  margin-top:25px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  transform-style:preserve-3d;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:rotateY(8deg) rotateX(8deg) scale(1.02);
+}
+
+/* SECTION TITLES */
+.title{
+  font-size:2rem;
+  margin-bottom:25px;
+  color:#00d9ff;
+}
+
+/* EXPERIENCE */
+.timeline{
+  display:grid;
+  gap:20px;
+}
+
+.box{
+  background:#111827;
+  padding:20px;
+  border-left:4px solid #00d9ff;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 20px rgba(0,217,255,0.2);
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.skill{
+  background:#00d9ff22;
+  color:#00d9ff;
+  padding:10px 16px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:scale(1.1);
+  background:#00d9ff44;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.project{
+  background:#111827;
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.project:hover{
+  transform:translateY(-8px) rotateX(5deg);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.contact a{
+  color:#00d9ff;
+  text-decoration:none;
+}
+
+/* Fade Animation */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 1s ease;
+}
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 </head>
+
 <body>
 
-<h1>Vimal Kumar R</h1>
-<div class="contact">
-    <p>
-        vimalkumarr738@gmail.com | +91-6369652035 | Chennai, India <br>
-        github.com/Vimalkumarr123 | linkedin.com/in/vimal-kumar-r-aa8265184 | Portfolio
-    </p>
-</div>
+<section class="hero">
+  <h1>Vimal Kumar R</h1>
+  <h2>Cybersecurity Analyst | SOC | Threat Hunting</h2>
 
-<h2>Professional Summary</h2>
-<p>
-Security-focused Cybersecurity Professional with hands-on experience in SOC operations,
-threat hunting, vulnerability validation, and endpoint security monitoring.
-Skilled in CORTEX XDR/EDR analysis, CVE assessment, and incident documentation.
-Strong foundation in networking, Linux security, and Python scripting.
-Seeking a Security Engineer / SOC Analyst role in a high-performance security team.
-</p>
+  <div class="card">
+    Security-focused Cybersecurity Professional with hands-on experience in SOC operations,
+    Cortex XDR analysis, CVE validation, and incident response.
+  </div>
+</section>
 
-<h2>Experience</h2>
+<section class="fade">
+  <h2 class="title">Experience</h2>
+  <div class="timeline">
 
-<h3>SOC Analyst (Private SOC) — 2025 – Present</h3>
-<p><strong>Confidential Organization</strong></p>
-<ul>
-    <li>Monitored and triaged security alerts using Cortex XDR (EDR) in a 24/7 SOC environment.</li>
-    <li>Investigated malware detections, suspicious processes, abnormal network connections, and IOC alerts.</li>
-    <li>Performed CVE validation and verified affected Linux/Windows versions in lab environments.</li>
-    <li>Created detailed incident reports with root cause analysis and remediation guidance.</li>
-</ul>
+    <div class="box">
+      <h3>SOC Analyst — Private SOC (2025 – Present)</h3>
+      <p>Alert triage, malware investigation, IOC analysis, CVE validation, incident reporting.</p>
+    </div>
 
-<h3>Cyber Security Intern — Jun 2025</h3>
-<p><strong>Elevate Labs (Remote)</strong></p>
-<ul>
-    <li>Assisted in vulnerability scanning and network security assessments.</li>
-    <li>Analyzed suspicious traffic using Wireshark and Nmap.</li>
-    <li>Supported incident documentation and remediation tracking.</li>
-    <li>Utilized Metasploit and Burp Suite for controlled security testing.</li>
-</ul>
+    <div class="box">
+      <h3>Cyber Security Intern — Elevate Labs</h3>
+      <p>Vulnerability scanning, Wireshark analysis, Metasploit & Burp Suite testing.</p>
+    </div>
 
-<h3>Independent Security Researcher / Bug Bounty Hunter — 2023 – 2024</h3>
-<ul>
-    <li>Identified and reported vulnerabilities including XSS, authentication bypass, and logic flaws.</li>
-    <li>Performed manual penetration testing on web applications and REST APIs.</li>
-    <li>Developed Proof-of-Concept (PoC) exploits and documented findings professionally.</li>
-    <li>Actively tracked CVEs and emerging threat advisories.</li>
-</ul>
+    <div class="box">
+      <h3>Independent Security Researcher</h3>
+      <p>Bug bounty, XSS testing, API security, PoC exploit development.</p>
+    </div>
 
-<h2>Projects & Hands-On Experience</h2>
-<ul>
-    <li>Deployed and configured a Kali Linux lab environment for penetration testing simulations.</li>
-    <li>Built a Python-based TCP Port Scanner for automated open port detection and logging.</li>
-    <li>Developed an HTTP Flood Simulation Tool to evaluate detection and response mechanisms.</li>
-    <li>Conducted CVE analysis by validating affected versions and reviewing patch commits.</li>
-    <li>Performed reflected XSS exploitation in controlled lab environments (PortSwigger Labs).</li>
-</ul>
+  </div>
+</section>
 
-<h2>Technical Skills</h2>
-<ul>
-    <li>Security Tools: Burp Suite, Wireshark, Nmap, Metasploit</li>
-    <li>SIEM/EDR: Cortex XDR, Alert Triage</li>
-    <li>Threat Hunting: XQL Querying, IOC Analysis</li>
-    <li>Vulnerability Management: CVE Analysis, Patch Validation</li>
-    <li>Operating Systems: Linux (Kali, Ubuntu), Windows</li>
-    <li>Programming: Python, Bash (Basic)</li>
-    <li>Networking: TCP/IP, DNS, Firewalls, Ports</li>
-    <li>Web Technologies: HTML, CSS</li>
-    <li>Version Control: Git, GitHub</li>
-</ul>
+<section class="fade">
+  <h2 class="title">Technical Skills</h2>
+  <div class="skills">
+    <span class="skill">Cortex XDR</span>
+    <span class="skill">Threat Hunting</span>
+    <span class="skill">Wireshark</span>
+    <span class="skill">Nmap</span>
+    <span class="skill">Metasploit</span>
+    <span class="skill">Python</span>
+    <span class="skill">Linux Security</span>
+    <span class="skill">CVE Analysis</span>
+    <span class="skill">SOC Operations</span>
+  </div>
+</section>
 
-<h2>Certifications</h2>
-<ul>
-    <li>CompTIA Security+ (Oct 2025 – Oct 2028) | Credential ID: COMP001022834821</li>
-    <li>Ethical Hacking – Cappricio University (2024)</li>
-    <li>SQL Injection Attacks – EC-Council (2024)</li>
-</ul>
+<section class="fade">
+  <h2 class="title">Projects</h2>
+  <div class="projects">
+    <div class="project">Python TCP Port Scanner</div>
+    <div class="project">HTTP Flood Simulation Tool</div>
+    <div class="project">Kali Linux Attack Lab Setup</div>
+    <div class="project">CVE Validation & Patch Analysis</div>
+  </div>
+</section>
 
-<h2>Education</h2>
-<ul>
-    <li>M.Sc. Cyber Forensics and Information Security — University of Madras (2025)</li>
-    <li>Bachelor of Computer Applications (CGPA: 7.1) — Dr. MGR Educational and Research Institute</li>
-</ul>
+<section class="fade contact">
+  <h2 class="title">Contact</h2>
+  <p>Email: <a href="mailto:vimalkumarr738@gmail.com">vimalkumarr738@gmail.com</a></p>
+  <p>GitHub: github.com/Vimalkumarr123</p>
+  <p>LinkedIn: linkedin.com/in/vimal-kumar-r-aa8265184</p>
+</section>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
