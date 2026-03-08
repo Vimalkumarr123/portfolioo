@@ -28,29 +28,9 @@
     background: var(--dark);
     color: #c8e8ff;
     overflow-x: hidden;
-    cursor: none;
   }
 
-  /* CUSTOM CURSOR 
-  #cursor {
-    position: fixed; width: 12px; height: 12px;
-    background: var(--cyan); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    mix-blend-mode: screen;
-    transform: translate(-50%,-50%);
-    transition: transform 0.1s, width 0.2s, height 0.2s;
-    box-shadow: 0 0 15px var(--cyan), 0 0 30px rgba(0,245,255,0.5);
-  }
-  #cursor-ring {
-    position: fixed; width: 36px; height: 36px;
-    border: 1px solid rgba(0,245,255,0.5);
-    border-radius: 50%;
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%,-50%);
-    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-  }
-  body:hover #cursor { transform: translate(-50%,-50%) scale(1.2); }
- */
+
 
   /* CANVAS BACKGROUND */
   #bg-canvas {
@@ -225,7 +205,7 @@
     font-family: 'Orbitron', monospace; font-size: 12px;
     font-weight: 700; letter-spacing: 3px;
     padding: 14px 32px; background: var(--cyan); color: var(--dark);
-    border: none; cursor: none; position: relative; overflow: hidden;
+    border: none; position: relative; overflow: hidden;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     transition: transform 0.2s, box-shadow 0.3s;
   }
@@ -243,7 +223,7 @@
     font-weight: 700; letter-spacing: 3px;
     padding: 14px 32px;
     background: transparent; color: var(--cyan);
-    border: 1px solid rgba(0,245,255,0.4); cursor: none;
+    border: 1px solid rgba(0,245,255,0.4);
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     transition: all 0.3s;
   }
@@ -514,7 +494,7 @@
     transition: all 0.3s; text-decoration: none; color: inherit;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     display: flex; flex-direction: column; align-items: center; gap: 10px;
-    cursor: none;
+    cursor: pointer;
     opacity: 0; transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s, border-color 0.3s, box-shadow 0.3s;
   }
@@ -659,9 +639,7 @@
   <div class="loader-text" id="loader-status">LOADING THREAT MATRIX...</div>
 </div>
 
-<!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+
 
 <!-- MATRIX COLUMNS -->
 <div class="matrix-col" style="left:10px;animation-duration:6s;animation-delay:-1s;">10101001110100110</div>
@@ -754,10 +732,10 @@
         <div class="timeline-dot"></div>
         <div class="exp-card">
           <div class="exp-header">
-            <div class="exp-role">SOC ANALYST (SBA INFO SOLUTION PVT)</div>
+            <div class="exp-role">SOC ANALYST (CORTEX XDR /EDR/APEX ONE )</div>
             <div class="exp-period">2025 — PRESENT</div>
           </div>
-          <div class="exp-company">▸ CONFIDENTIAL ORGANIZATION</div>
+          <div class="exp-company">▸ SBA INFO SOLUTIONS PVT. LTD </div>
           <ul class="exp-items">
             <li>Monitored and triaged security alerts using Cortex XDR (EDR) in a 24/7 SOC environment.</li>
             <li>Investigated malware detections, suspicious processes, abnormal network connections, and IOC alerts.</li>
@@ -882,7 +860,7 @@
   <section id="projects">
     <div class="section-header">
       <div class="section-num">03</div>
-      <h2 class="section-title">PROJECT'S</h2>
+      <h2 class="section-title">PROJECTS</h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
@@ -993,7 +971,7 @@
   <section id="contact">
     <div class="section-header">
       <div class="section-num">06</div>
-      <h2 class="section-title">CONTACT ME</h2>
+      <h2 class="section-title">ESTABLISH LINK</h2>
       <div class="section-line"></div>
     </div>
     <p style="color:rgba(200,232,255,0.5);font-size:16px;max-width:500px;margin:0 auto 20px;">
@@ -1001,10 +979,10 @@
       Reach out to initiate a secure connection.
     </p>
     <div class="contact-grid">
-      <a class="contact-item" href="mailto:vimalkumarr738@gmail.com">
+      <a class="contact-item" href="/cdn-cgi/l/email-protection#ff8996929e93948a929e8d8dc8ccc7bf98929e9693d19c9092">
         <div class="contact-icon">📧</div>
         <div class="contact-label">EMAIL</div>
-        <div class="contact-value">vimalkumarr738@gmail.com</div>
+        <div class="contact-value"><span class="__cf_email__" data-cfemail="ff8996929e93948a929e8d8dc8ccc7bf98929e9693d19c9092">[email&#160;protected]</span></div>
       </a>
       <a class="contact-item" href="tel:+916369652035">
         <div class="contact-icon">📞</div>
@@ -1035,7 +1013,7 @@
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ============================================================
 // LOADER
 // ============================================================
@@ -1059,20 +1037,7 @@ setTimeout(() => {
   document.getElementById('loader').classList.add('hidden');
 }, 2000);
 
-// ============================================================
-// CURSOR
-// ============================================================
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-function animCursor() {
-  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  requestAnimationFrame(animCursor);
-}
-animCursor();
+
 
 // ============================================================
 // 4D PARTICLE + NEURAL NETWORK CANVAS
@@ -1338,19 +1303,7 @@ document.querySelectorAll('.contact-item').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.08}s`;
 });
 
-// ============================================================
-// CURSOR HOVER EFFECT
-// ============================================================
-document.querySelectorAll('a, button, .skill-tag, .project-card, .exp-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '20px'; cursor.style.height = '20px';
-    ring.style.width = '60px'; ring.style.height = '60px';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '12px'; cursor.style.height = '12px';
-    ring.style.width = '36px'; ring.style.height = '36px';
-  });
-});
+
 </script>
 </body>
 </html>
